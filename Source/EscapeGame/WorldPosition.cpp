@@ -19,9 +19,15 @@ void UWorldPosition::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UE_LOG(LogTemp, Warning, TEXT("Test warning"));
-	UE_LOG(LogTemp, Display, TEXT("Test default"));
-	UE_LOG(LogTemp, Error, TEXT("Test warning"));
+	FString Log = TEXT("Hello world!");
+	FString* PtrLog = &Log;
+
+	Log.Len();
+	(*PtrLog).Len();
+	PtrLog->Len();
+
+	UE_LOG(LogTemp, Warning, TEXT("%s"), *Log);
+
 }
 
 
